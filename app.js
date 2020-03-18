@@ -4,6 +4,34 @@ const port = 3000;
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
+app.use("/images", express.static("images"));
+
+let projects = [
+  {
+    name: "Expense Tracker",
+    image: ""
+  },
+  {
+    name: "Chat-App",
+    image: ""
+  },
+  {
+    name: "Snake Game",
+    image: ""
+  },
+  {
+    name: "Pomodoro Timer",
+    image: ""
+  },
+  {
+    name: "To-Do App",
+    image: ""
+  },
+  {
+    name: "Digital Clock",
+    image: ""
+  }
+];
 
 
 
@@ -12,8 +40,8 @@ app.get("/", function(req, res){
   res.render("home");
 });
 
-app.get("/projects", function(req, res){
-  res.render("home");
+app.get("/projects", function(req, res) {
+  res.render("projects", { projects: projects });
 });
 
 app.get("/about", function(req, res){

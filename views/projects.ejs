@@ -1,0 +1,33 @@
+<%- include("partials/header") %>
+
+
+
+
+<div class="container" style="background-color: black;" style="padding-top: 2%;">
+  <header class="jumbotron bg-dark">
+    <div style="text-align: center;" class="container">
+      <div class="text" style="color: black;">
+      <h1>Latest Projects</h1>
+      <p>Front-End Apps / Websites / Games / Full-Stack Applications</p>
+    </div>
+  </div>
+  </header>
+
+
+
+
+  <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+    <% projects.forEach(function(project){ %>
+    <div class="col-lg-12" style="padding-bottom: 2%;">
+      <div class="img-thumbnail">
+        <img src="<%= project.image %>" />
+        <div class="caption">
+          <h4 style="padding-bottom: 2%;"><%= project.name %></h4>
+        </div>
+      </div>
+    </div>
+    <% }); %>
+  </div>
+  </div>
+
+<%- include("partials/footer") %>
